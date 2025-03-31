@@ -1,35 +1,30 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import Header from "./components/Header";
+import Task from "./components/TaskList"
+import Button from "./components/Button"
+import React from "react"
+import Modal from "./Modal";
 
-function App() {
-  const [count, setCount] = useState(0)
+export default function App(){
+  const [task, setTask] = React.useState("Add some task please!") 
+  const [modal, setModal] = React.useState(false)
 
-  return (
+  function addTask(){
+    
+  }
+  function changeModal(){
+    setModal(prevModal => !prevModal)
+  }
+  function deleteTask(){
+    console.log("bye")
+  }
+  return(
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <Header />
+      <Task val = {task}/>
+      <Button name="Add Task" func={changeModal}/>
+      <Button name="Delete Task" func={deleteTask}/>
+      {modal && < Modal add={addTask}
+      change ={changeModal}/>}
     </>
-  )
+  );
 }
-
-export default App
