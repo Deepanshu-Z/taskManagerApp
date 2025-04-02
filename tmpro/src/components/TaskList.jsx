@@ -1,16 +1,15 @@
-export default function Task(prop){
-    return(
+export default function Task(prop) {
+    return (
         <div className="task-container">
             <div className="task"> 
                 <ul>
-                    <li>Title = {prop.val}</li>
-                    <li>Description = {prop.val}</li>
-                    <li>Due Date = {prop.val}</li>
-                    <li>Priority = {prop.val}</li>
-                    <li>Status = {prop.val}</li>
-                    <li>Category = {prop.val}</li>
+                    <li>Title: {prop.val.title}</li>
+                    <li>Description: {prop.val.description}</li>
+                    <li>Due Date: {prop.val.dueDate}</li>
+                    <li>Priority: {prop.val.priority}</li>
+                    <li>Category: {prop.val.category}</li>
                 </ul> 
             </div>
         </div>
-    )
+    );
 }

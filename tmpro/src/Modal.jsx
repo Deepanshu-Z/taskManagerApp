@@ -4,27 +4,27 @@ export default function Modal(props) {
       <form action="" className="form">
         <label>
           Enter Title:
-          <input type="text" />
+          <input type="text" name="title"/>
         </label>
         <label>
           Enter Description:
-          <input type="text" />
+          <input type="text" name="description" />
         </label>
         <label>
           Enter Due Date:
-          <input type="date" />
+          <input type="date" name="dueDate"/>
         </label>
         <label>
           Enter Priority:
-          <select>
-            <option value="apple">High</option>
-            <option value="banana">Medium</option>
-            <option value="orange">Low</option>
+          <select name="priority">
+            <option value="high">High</option>
+            <option value="medium">Medium</option>
+            <option value="low">Low</option>
           </select>
         </label>
         <label>
           Enter Category:
-          <select>
+          <select name="category">
             <option value="work">work</option>
             <option value="personal">personal</option>
             <option value="casual">casual</option>
